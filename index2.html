@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" class="no-js">
+<html lang="ko" class="no-js" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,6 +37,7 @@
       text-rendering:optimizeLegibility;
     }
 
+    /* top accent bar */
     body::before{
       content:"";position:fixed;top:0;left:0;right:0;height:3px;
       background:var(--accent);z-index:50;
@@ -48,6 +49,7 @@
       align-items:start;
     }
 
+    /* ---------- RAIL ---------- */
     .rail{
       position:sticky;top:0;
       height:100vh;
@@ -94,6 +96,7 @@
       letter-spacing:0.08em;color:var(--muted);
     }
 
+    /* ---------- MAIN ---------- */
     main{padding:54px 56px 90px 56px;max-width:960px;}
 
     .section{padding-bottom:30px;}
@@ -117,6 +120,7 @@
       letter-spacing:0.16em;color:var(--muted);text-transform:uppercase;
     }
 
+    /* hero */
     .hero{
       font-size:2.55rem;font-weight:700;line-height:1.22;
       letter-spacing:-0.022em;color:var(--ink);
@@ -128,17 +132,7 @@
     .intro-prose p:last-child{margin-bottom:0;}
     .intro-prose strong{color:var(--ink);font-weight:600;}
 
-    .callout{
-      margin:24px 0 4px;
-      padding:18px 22px;
-      border-left:3px solid var(--accent);
-      background:var(--accent-bg);
-      color:var(--ink-soft);
-      border-radius:0 3px 3px 0;
-      font-size:0.92rem;
-      line-height:1.72;
-    }
-
+    /* generic block */
     .block{margin-top:30px;}
     .block-label{
       font-family:var(--font-sans);font-size:0.74rem;font-weight:600;
@@ -153,6 +147,7 @@
     .block p{color:var(--ink-soft);}
     .block p + p{margin-top:14px;}
 
+    /* tables */
     table{width:100%;border-collapse:collapse;font-size:0.875rem;}
     .meta{margin-top:6px;}
     table th,table td{
@@ -168,9 +163,10 @@
     table td{color:var(--ink-soft);}
     table tr:last-child th,table tr:last-child td{border-bottom:none;}
 
-    .tech th{color:var(--accent);width:160px;}
+    .tech th{color:var(--accent);width:148px;}
     .tech td{color:var(--ink);}
 
+    /* projects */
     .project{
       margin-top:34px;
       border:1px solid var(--line);
@@ -188,6 +184,7 @@
       text-transform:uppercase;margin-bottom:18px;
     }
 
+    /* decision blocks */
     .decision{
       margin-top:22px;
       border-left:2px solid var(--accent);
@@ -215,16 +212,7 @@
     .drow dd{font-size:0.875rem;color:var(--ink-soft);line-height:1.72;}
     .drow.effect dd{color:var(--ink);font-weight:500;}
 
-    .scope-row{
-      display:grid;grid-template-columns:52px 1fr;gap:14px;
-      padding:7px 0;
-    }
-    .scope-row dt{
-      font-size:0.74rem;font-weight:600;color:var(--accent);
-      letter-spacing:0.04em;padding-top:1px;
-    }
-    .scope-row dd{font-size:0.875rem;color:var(--ink-soft);line-height:1.72;}
-
+    /* result + duty lists */
     ul.list{list-style:none;margin-top:4px;}
     ul.list li{
       position:relative;padding-left:20px;
@@ -236,8 +224,8 @@
       width:6px;height:6px;border:1.4px solid var(--accent);
     }
     ul.list li:last-child{margin-bottom:0;}
-    ul.list li strong{color:var(--ink);font-weight:600;}
 
+    /* pmo */
     .pmo-lead{color:var(--ink-soft);margin-bottom:8px;}
     .pmo-project{
       margin-top:30px;padding-top:26px;
@@ -245,21 +233,35 @@
     }
     .pmo-project:first-of-type{border-top:none;padding-top:6px;}
     .pmo-project .project-title{font-size:1.06rem;}
+    .pmo-note{
+      margin-top:14px;color:var(--ink-soft);font-size:0.9rem;
+    }
+    .todo{
+      font-family:var(--font-mono);font-size:0.72rem;
+      color:var(--muted);background:var(--paper-2);
+      border:1px dashed var(--line);border-radius:2px;
+      padding:1px 7px;
+    }
 
-    .ai-workflow{
-      margin-top:24px;padding:22px 24px;
+    /* ai-eng sub parts */
+    .subpart{margin-top:30px;}
+    .subpart-label{
+      font-size:0.97rem;font-weight:600;color:var(--ink);
+      margin-bottom:11px;display:flex;align-items:baseline;gap:10px;
+    }
+    .subpart-label .sp-n{
+      font-family:var(--font-mono);font-size:0.72rem;font-weight:600;
+      color:var(--accent);
+    }
+    .subpart p{color:var(--ink-soft);}
+    .subpart p + p{margin-top:13px;}
+
+    .closing{
+      margin-top:32px;padding:20px 24px;
       border:1px solid var(--accent);border-radius:3px;
       background:var(--accent-bg);
+      color:var(--ink);font-size:0.9rem;line-height:1.72;
     }
-    .ai-workflow-label{
-      font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.12em;
-      color:var(--accent);text-transform:uppercase;
-      margin-bottom:12px;font-weight:600;
-    }
-    .ai-workflow p{
-      color:var(--ink-soft);font-size:0.9rem;line-height:1.75;
-    }
-    .ai-workflow code{background:rgba(255,255,255,0.55);}
 
     code{
       font-family:var(--font-mono);font-size:0.84em;
@@ -267,8 +269,9 @@
       background:var(--accent-bg);
       padding:1px 5px;border-radius:3px;
     }
-    .decision code,.ai-workflow code{background:rgba(255,255,255,0.55);}
+    .decision code,.closing code{background:rgba(255,255,255,0.55);}
 
+    /* reveal animation */
     .js .reveal{opacity:0;transform:translateY(14px);
       transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
     .js .reveal.visible{opacity:1;transform:none;}
@@ -282,6 +285,7 @@
     .rail-anim:nth-child(4){animation-delay:.26s;}
     .rail-anim:nth-child(5){animation-delay:.33s;}
 
+    /* ---------- RESPONSIVE ---------- */
     @media (max-width:880px){
       .layout{grid-template-columns:1fr;}
       .rail{
@@ -301,10 +305,11 @@
     }
     @media (max-width:480px){
       .hero{font-size:1.7rem;}
-      .drow,.scope-row{grid-template-columns:1fr;gap:3px;}
-      .drow dt,.scope-row dt{padding-top:6px;}
+      .drow{grid-template-columns:1fr;gap:3px;}
+      .drow dt{padding-top:6px;}
     }
 
+    /* ---------- PRINT ---------- */
     @media print{
       body{background:#fff;font-size:10.5pt;line-height:1.6;}
       body::before{display:none;}
@@ -327,6 +332,7 @@
 <body>
 <div class="layout">
 
+  <!-- ============ RAIL ============ -->
   <aside class="rail">
     <div class="rail-anim">
       <div class="rail-name">정세영</div>
@@ -336,17 +342,19 @@
     <div class="rail-contact rail-anim">
       010-9311-2548<br>
       <a href="mailto:easebs113@gmail.com">easebs113@gmail.com</a><br>
-      <a href="https://github.com/Ease113" target="_blank" rel="noopener">github.com/Ease113</a>
+      <a href="https://github.com/Ease113" target="_blank">github.com/Ease113</a>
     </div>
     <nav class="rail-anim">
       <a href="#intro"><span class="n">01</span><span>소개</span></a>
       <a href="#dev"><span class="n">02</span><span>개발 경력</span></a>
       <a href="#pmo"><span class="n">03</span><span>PMO 경력</span></a>
-      <a href="#project"><span class="n">04</span><span>프로젝트</span></a>
+      <a href="#hackathon"><span class="n">04</span><span>해커톤 프로젝트</span></a>
+      <a href="#ai"><span class="n">05</span><span>AI-assisted Engineering</span></a>
     </nav>
     <div class="rail-foot rail-anim">경력기술서 · 2026</div>
   </aside>
 
+  <!-- ============ MAIN ============ -->
   <main>
 
     <!-- 01 소개 -->
@@ -360,20 +368,16 @@
       <h1 class="hero reveal">운영과 확장을 고려해<br><span class="lead-word">데이터 구조를 설계하는</span><br>백엔드 엔지니어</h1>
 
       <div class="intro-prose reveal">
-        <p>Java/Spring 기반 백엔드 개발자로 약 2년간 다국어 확장, 대용량 조회 성능 개선, 글로벌 타임존 대응 등 운영 환경을 고려한 백엔드 구조 설계를 수행해 왔습니다. 구현 이전에 설계 의도와 제약사항을 문서로 정리하고, 이를 기반으로 개발·QA·운영 단계까지 일관성을 유지하는 방식을 선호합니다.</p>
-      </div>
-
-      <div class="callout reveal">
-        현재 (주)제타럭스시스템에서 PMO로 재직 중이며, 백엔드 개발자로의 복귀를 준비하고 있습니다. PMO 업무 외에 토이 프로젝트를 통해 최신 기술 스택(Python·FastAPI·LLM 워크플로우 등)을 꾸준히 다루고 있습니다.
+        <p>복잡한 비즈니스 요구사항과 얽혀 있는 데이터 흐름을 명확한 시스템 구조로 정의하는 백엔드 엔지니어입니다.<br> 레거시 환경의 마이그레이션, 비결정적 알고리즘 분리, AI 하네스 워크플로우 등 아키텍처 설계를 중요하게 생각합니다.<br> 단순 코드 생성을 넘어, 오버 엔지니어링과 범위 이탈을 통제하는
+          설계-검증 프로세스를 고민하며 개발 생산성을 높이고 있습니다.</p>
       </div>
 
       <div class="block reveal">
         <h4 class="block-label">기술 영역</h4>
         <table class="tech">
-          <tr><th>Backend &amp; API</th><td>Java (Spring Framework, Struts, JSP) / Python, FastAPI</td></tr>
-          <tr><th>Data &amp; Database</th><td>MySQL, PostgreSQL, SQLite</td></tr>
-          <tr><th>Frontend &amp; Collaboration</th><td>JavaScript, jQuery / Angular 기반 운영 대응 / React 기반 개인 프로젝트</td></tr>
-          <tr><th>Tools</th><td>Docker, Git, Apache JMeter</td></tr>
+          <tr><th>Backend &amp; API</th><td>Python, FastAPI, Pydantic / Java (Spring Framework, Struts, JSP)</td></tr>
+          <tr><th>Data &amp; Database</th><td>MySQL, PostgreSQL, SQLite — 다국어 스키마 설계, 인덱스 최적화, 대용량 다중 조인 개선</td></tr>
+          <tr><th>Frontend &amp; Co-work</th><td>JavaScript, jQuery (JSP 화면 제어) / Angular & React (협업 경험)</td></tr>
         </table>
       </div>
     </section>
@@ -387,19 +391,17 @@
       </div>
 
       <div class="block reveal" style="margin-top:0;">
-        <h4 class="block-label">(株)Lazorte (히타치 솔루션 파트너사) — 백엔드 엔지니어</h4>
-        <p style="font-family:var(--font-mono);font-size:0.78rem;color:var(--muted);margin-bottom:14px;">2023.04 – 2025.02 · 1년 11개월</p>
-        <p>(주)미스미(MISUMI) 관리자 프레임 개발 프로젝트에 참여해 다국가·다국어 대응 작업을 두 차례 맡았고, 사내 고객처의 ERP 시스템 운영을 담당했습니다.</p>
+        <p>(株)Lazorte(히타치 솔루션 파트너사)에서 약 1년 11개월간 백엔드 개발자로 근무했습니다.<br> (주)미스미(MISUMI) 관리자 프레임 개발 프로젝트에 참여해 다국가·다국어 대응 작업을 두 차례 맡았고, <br>사내 고객처의 ERP 시스템 운영을 담당했습니다.</p>
       </div>
 
-      <!-- Project 01: 5개국어 -->
+      <!-- project: 5개국어 -->
       <article class="project reveal">
         <div class="project-kicker">Project 01</div>
         <div class="project-title">(주)미스미(MISUMI) 관리자 프레임 — 아시아 5개 국어 확장 및 DB 구조 최적화</div>
 
         <table class="meta">
           <tr><th>기간</th><td>2024.06 – 2025.02</td></tr>
-          <tr><th>인원</th><td>8명 (PM–PL–개발)</td></tr>
+          <tr><th>인원</th><td>8명</td></tr>
           <tr><th>주요 기술</th><td>Java, Struts, JSP, JavaScript, MySQL</td></tr>
         </table>
 
@@ -412,10 +414,10 @@
           <div class="decision-title"><span class="dnum">설계 판단 1</span>국가·언어 조합 기반 테이블 재설계 — 확장성 확보</div>
           <dl>
             <div class="drow"><dt>문제</dt><dd>기존 구조는 새 언어가 추가될 때마다 테이블 스키마(컬럼/테이블)를 변경해야 했으며, 독일과 같이 한 국가에서 복수의 언어를 사용하는 경우 테이블 내의 데이터가 혼재하게 되는 문제가 발생함.</dd></div>
-            <div class="drow"><dt>해결</dt><dd>국가와 언어 조합을 메타데이터화하여 국가·언어 조합 기반의 제품 정보 테이블 구조 개선 수행.</dd></div>
+            <div class="drow"><dt>해결</dt><dd>국가와 언어 조합을 메타데이터화하여 제품 정보 테이블 구조를 전면 재설계.</dd></div>
             <div class="drow effect"><dt>성과</dt><dd>이후 신규 언어 확장 시 스키마 변경 없이 데이터 적재만으로 처리 가능한 구조적 확장성 확보.</dd></div>
           </dl>
-          <div style="margin:20px 0 0;padding:18px;border:1px solid var(--line);border-radius:3px;background:var(--paper-2);overflow-x:auto;">
+          <div style="margin:20px 0;padding:18px;border:1px solid var(--line);border-radius:3px;background:var(--paper-2);overflow-x:auto;">
             <div style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.12em;color:var(--accent);margin-bottom:12px;text-transform:uppercase;">테이블 구조 재설계 — 기존 vs 개선 이후</div>
             <svg viewBox="0 0 680 242" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;height:auto;display:block;">
               <defs>
@@ -423,10 +425,13 @@
                   <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </marker>
               </defs>
+              <!-- section divider -->
               <line x1="325" y1="8" x2="325" y2="172" stroke="#D9D4C5" stroke-width="0.5" stroke-dasharray="4,3"/>
 
+              <!-- ── LEFT: 기존 구조 ── -->
               <text x="162" y="20" text-anchor="middle" font-size="10" fill="#827E72" font-family="IBM Plex Mono,monospace" font-weight="600">기존 — 국가 단위 테이블</text>
 
+              <!-- Cylinder: 국가A -->
               <ellipse cx="72" cy="45" rx="32" ry="5" fill="#FDDCAA" stroke="#C07A3A" stroke-width="0.8"/>
               <rect x="40" y="45" width="64" height="50" fill="#F5B76A" stroke="#C07A3A" stroke-width="0.8"/>
               <ellipse cx="72" cy="95" rx="32" ry="5" fill="#D49055" stroke="#C07A3A" stroke-width="0.8"/>
@@ -434,6 +439,7 @@
               <text x="72" y="84" text-anchor="middle" font-size="8.5" fill="#5C3A1E" font-family="IBM Plex Mono,monospace">언어1</text>
               <text x="72" y="112" text-anchor="middle" font-size="8.5" fill="#827E72" font-family="IBM Plex Mono,monospace">테이블_A</text>
 
+              <!-- Cylinder: 국가B -->
               <ellipse cx="162" cy="45" rx="32" ry="5" fill="#FDDCAA" stroke="#C07A3A" stroke-width="0.8"/>
               <rect x="130" y="45" width="64" height="50" fill="#F5B76A" stroke="#C07A3A" stroke-width="0.8"/>
               <ellipse cx="162" cy="95" rx="32" ry="5" fill="#D49055" stroke="#C07A3A" stroke-width="0.8"/>
@@ -441,6 +447,7 @@
               <text x="162" y="84" text-anchor="middle" font-size="8.5" fill="#5C3A1E" font-family="IBM Plex Mono,monospace">언어1</text>
               <text x="162" y="112" text-anchor="middle" font-size="8.5" fill="#827E72" font-family="IBM Plex Mono,monospace">테이블_B</text>
 
+              <!-- Cylinder: 국가C (problem: 언어1+언어2 혼재) -->
               <ellipse cx="260" cy="40" rx="34" ry="5" fill="#FDDCAA" stroke="#C07A3A" stroke-width="1.2"/>
               <rect x="226" y="40" width="68" height="60" fill="#F5B76A" stroke="#C07A3A" stroke-width="1.2"/>
               <ellipse cx="260" cy="100" rx="34" ry="5" fill="#D49055" stroke="#C07A3A" stroke-width="1.2"/>
@@ -450,10 +457,13 @@
               <text x="260" y="116" text-anchor="middle" font-size="8.5" fill="#C07A3A" font-family="IBM Plex Mono,monospace" font-weight="600">테이블_C ⚠</text>
               <text x="162" y="134" text-anchor="middle" font-size="8" fill="#C07A3A" font-family="IBM Plex Mono,monospace">→ 언어 추가 시 구조 변경 필요</text>
 
+              <!-- CENTER arrow -->
               <line x1="328" y1="76" x2="352" y2="76" stroke="var(--accent)" stroke-width="2" marker-end="url(#db-arr)"/>
 
+              <!-- ── RIGHT: 개선 이후 ── -->
               <text x="520" y="20" text-anchor="middle" font-size="10" fill="#1F4D3E" font-family="IBM Plex Mono,monospace" font-weight="600">개선 이후 — 국가·언어 조합 단위</text>
 
+              <!-- Cylinder: 국가A_언어1 -->
               <ellipse cx="385" cy="45" rx="28" ry="4" fill="#C8E6C9" stroke="#2E7D32" stroke-width="0.8"/>
               <rect x="357" y="45" width="56" height="44" fill="#A5D6A7" stroke="#2E7D32" stroke-width="0.8"/>
               <ellipse cx="385" cy="89" rx="28" ry="4" fill="#81C784" stroke="#2E7D32" stroke-width="0.8"/>
@@ -461,6 +471,7 @@
               <text x="385" y="76" text-anchor="middle" font-size="8" fill="#1B5E20" font-family="IBM Plex Mono,monospace">언어1</text>
               <text x="385" y="104" text-anchor="middle" font-size="7.5" fill="#2E7D32" font-family="IBM Plex Mono,monospace">테이블_A_L1</text>
 
+              <!-- Cylinder: 국가B_언어1 -->
               <ellipse cx="465" cy="45" rx="28" ry="4" fill="#C8E6C9" stroke="#2E7D32" stroke-width="0.8"/>
               <rect x="437" y="45" width="56" height="44" fill="#A5D6A7" stroke="#2E7D32" stroke-width="0.8"/>
               <ellipse cx="465" cy="89" rx="28" ry="4" fill="#81C784" stroke="#2E7D32" stroke-width="0.8"/>
@@ -468,6 +479,7 @@
               <text x="465" y="76" text-anchor="middle" font-size="8" fill="#1B5E20" font-family="IBM Plex Mono,monospace">언어1</text>
               <text x="465" y="104" text-anchor="middle" font-size="7.5" fill="#2E7D32" font-family="IBM Plex Mono,monospace">테이블_B_L1</text>
 
+              <!-- Cylinder: 국가C_언어1 -->
               <ellipse cx="555" cy="38" rx="28" ry="4" fill="#C8E6C9" stroke="#2E7D32" stroke-width="0.8"/>
               <rect x="527" y="38" width="56" height="40" fill="#A5D6A7" stroke="#2E7D32" stroke-width="0.8"/>
               <ellipse cx="555" cy="78" rx="28" ry="4" fill="#81C784" stroke="#2E7D32" stroke-width="0.8"/>
@@ -475,6 +487,7 @@
               <text x="555" y="67" text-anchor="middle" font-size="8" fill="#1B5E20" font-family="IBM Plex Mono,monospace">언어1</text>
               <text x="555" y="92" text-anchor="middle" font-size="7.5" fill="#2E7D32" font-family="IBM Plex Mono,monospace">테이블_C_L1</text>
 
+              <!-- Cylinder: 국가C_언어2 (stacked below) -->
               <ellipse cx="633" cy="38" rx="28" ry="4" fill="#C8E6C9" stroke="#2E7D32" stroke-width="0.8"/>
               <rect x="605" y="38" width="56" height="40" fill="#A5D6A7" stroke="#2E7D32" stroke-width="0.8"/>
               <ellipse cx="633" cy="78" rx="28" ry="4" fill="#81C784" stroke="#2E7D32" stroke-width="0.8"/>
@@ -484,9 +497,12 @@
 
               <text x="520" y="114" text-anchor="middle" font-size="8" fill="#1F4D3E" font-family="IBM Plex Mono,monospace">→ 언어 추가 = 테이블 추가만으로 가능</text>
 
+              <!-- ── BOTTOM: 참조 흐름 비교 ── -->
+              <!-- Divider -->
               <line x1="20" y1="128" x2="660" y2="128" stroke="#D9D4C5" stroke-width="0.5"/>
               <text x="340" y="140" text-anchor="middle" font-size="8.5" fill="#827E72" font-family="IBM Plex Mono,monospace">테이블 참조 흐름</text>
 
+              <!-- Left flow -->
               <rect x="22" y="150" width="52" height="26" rx="3" fill="white" stroke="#D9D4C5" stroke-width="0.5"/>
               <text x="48" y="163" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--ink)" font-family="IBM Plex Mono,monospace">입력</text>
               <line x1="74" y1="163" x2="86" y2="163" stroke="#827E72" stroke-width="1" marker-end="url(#db-arr)"/>
@@ -496,8 +512,10 @@
               <rect x="190" y="150" width="80" height="26" rx="3" fill="white" stroke="#D9D4C5" stroke-width="0.5"/>
               <text x="230" y="163" text-anchor="middle" dominant-baseline="central" font-size="8" fill="var(--ink)" font-family="IBM Plex Mono,monospace">테이블 선택</text>
 
+              <!-- Center arrow -->
               <line x1="328" y1="163" x2="350" y2="163" stroke="var(--accent)" stroke-width="2" marker-end="url(#db-arr)"/>
 
+              <!-- Right flow -->
               <rect x="355" y="150" width="52" height="26" rx="3" fill="white" stroke="#D9D4C5" stroke-width="0.5"/>
               <text x="381" y="163" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--ink)" font-family="IBM Plex Mono,monospace">입력</text>
               <line x1="407" y1="163" x2="419" y2="163" stroke="var(--accent)" stroke-width="1" marker-end="url(#db-arr)"/>
@@ -508,6 +526,7 @@
               <rect x="545" y="150" width="100" height="26" rx="3" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="0.8"/>
               <text x="595" y="163" text-anchor="middle" dominant-baseline="central" font-size="7.5" fill="var(--accent)" font-family="IBM Plex Mono,monospace">조합 테이블 선택</text>
 
+              <!-- caption -->
               <text x="340" y="206" text-anchor="middle" font-size="8" fill="#827E72" font-family="IBM Plex Mono,monospace">국가·언어 조합 코드를 기반으로 테이블을 동적 선택 — 같은 국가의 다국어를 별도 테이블로 분리 관리</text>
             </svg>
           </div>
@@ -518,35 +537,27 @@
           <dl>
             <div class="drow"><dt>문제</dt><dd>STL/썸네일 관리 화면에서 제품 마스터(28만 건)와 모델 마스터(4만 건) 등 4개 테이블을 다중 조인하여 검색할 때, 인덱스 부재로 풀 스캔(Full Scan)이 발생해 화면 응답 속도가 심각하게 저하됨.</dd></div>
             <div class="drow"><dt>해결</dt><dd>레거시 시스템 안정성을 위해 비정규화 대신, 조인 키이자 핵심 검색 조건인 모델번호(型番)를 기준으로 복합 인덱스 구성.</dd></div>
-            <div class="drow effect"><dt>성과</dt><dd>인덱스 최적화를 통해 풀 스캔을 제거하고 운영 환경에서 안정적인 조회 성능을 확보. 동일 구조의 썸네일 관리 화면까지 수평 전개하여 성능 개선.</dd></div>
-          </dl>
-        </div>
-
-        <div class="decision">
-          <div class="decision-title"><span class="dnum">설계 판단 3</span>관리자 Config 화면 신규 개발 및 데이터 관리 화면 신규</div>
-          <dl>
-            <div class="scope-row"><dt>범위</dt><dd>다국어 확장에 필요한 시차·공지사항·언어 설정용 Config 화면을 신규 구축. 재설계된 테이블 구조에 맞춰 신규 테이블을 추가하고 CRUD 전체를 신규 구현.</dd></div>
-            <div class="scope-row" style="border-top:1px solid rgba(31,77,62,0.12);"><dt style="color:var(--accent);">성과</dt><dd style="color:var(--ink);font-weight:500;">관리자가 DB에 직접 접근하지 않고도 데이터를 CSV로 조회·관리할 수 있는 운영 체계 확보.</dd></div>
+            <div class="drow effect"><dt>성과</dt><dd>풀 스캔을 제거하여 조회 시간을 수 초 이내로 단축하고, 동일 구조의 썸네일 관리 화면까지 수평 전개하여 성능 개선.</dd></div>
           </dl>
         </div>
 
         <div class="block">
           <h4 class="block-label">추가 담당</h4>
           <ul class="list">
-            <li>기본/상세 설계서 직접 작성 (Java/Struts 서버 로직, SQL 구현) — PL 검토를 거쳐 확정</li>
+            <li>기본/상세 설계서 직접 작성 (Java/Struts 서버 로직, SQL 구현)</li>
             <li>단위·결합 테스트 시나리오 설계 및 수행 전담</li>
           </ul>
         </div>
       </article>
 
-      <!-- Project 02: 태국 -->
+      <!-- project: 태국 -->
       <article class="project reveal">
         <div class="project-kicker">Project 02</div>
         <div class="project-title">(주)미스미(MISUMI) 관리자 프레임 — 태국(영어) 확장 및 글로벌 타임존 대응</div>
 
         <table class="meta">
           <tr><th>기간</th><td>2023.06 – 2024.02</td></tr>
-          <tr><th>인원</th><td>8명 (PM–PL–개발)</td></tr>
+          <tr><th>인원</th><td>8명</td></tr>
           <tr><th>주요 기술</th><td>Java, Struts, JSP, JavaScript, jQuery, MySQL</td></tr>
         </table>
 
@@ -556,82 +567,7 @@
         </div>
 
         <div class="decision">
-          <div class="decision-title"><span class="dnum">설계 판단 1</span>STL · 썸네일 관리 화면 백엔드 신규 구축</div>
-          <dl>
-            <div class="scope-row"><dt>범위</dt><dd>태국 서비스 출시에 맞춰 STL 관리 화면과 썸네일 관리 화면을 신규 개발. Action → Function → DAO → DB로 이어지는 백엔드 전 계층 로직을 처음부터 설계·구현.</dd></div>
-            <div class="scope-row" style="border-top:1px solid rgba(31,77,62,0.12);"><dt style="color:var(--accent);">성과</dt><dd style="color:var(--ink);font-weight:500;">유지보수가 아닌 화면~DB 전 계층의 신규 개발을 단독 담당.</dd></div>
-          </dl>
-          <div style="margin:20px 0 0;padding:18px;border:1px solid var(--line);border-radius:3px;background:var(--paper-2);overflow-x:auto;">
-            <div style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.12em;color:var(--accent);margin-bottom:12px;text-transform:uppercase;">서버 처리 시퀀스 — 담당 개발 영역 (화면~DAO)</div>
-            <svg viewBox="0 0 680 252" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;height:auto;display:block;">
-              <defs>
-                <marker id="seq-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                  <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </marker>
-              </defs>
-
-              <rect x="2" y="2" width="125" height="220" rx="4" fill="var(--accent-bg)" stroke="var(--line)" stroke-width="0.5"/>
-              <rect x="131" y="2" width="120" height="220" rx="4" fill="white" stroke="var(--line)" stroke-width="0.5"/>
-              <rect x="255" y="2" width="135" height="220" rx="4" fill="white" stroke="var(--line)" stroke-width="0.5"/>
-              <rect x="394" y="2" width="120" height="220" rx="4" fill="white" stroke="var(--line)" stroke-width="0.5"/>
-              <rect x="518" y="2" width="160" height="220" rx="4" fill="var(--paper-2)" stroke="var(--line)" stroke-width="0.5"/>
-
-              <text x="64" y="20" text-anchor="middle" font-size="9.5" font-weight="600" fill="var(--accent)" font-family="IBM Plex Mono,monospace">화면</text>
-              <text x="191" y="20" text-anchor="middle" font-size="9.5" font-weight="600" fill="var(--ink)" font-family="IBM Plex Mono,monospace">Action Class</text>
-              <text x="322" y="20" text-anchor="middle" font-size="9.5" font-weight="600" fill="var(--ink)" font-family="IBM Plex Mono,monospace">Function Class</text>
-              <text x="454" y="20" text-anchor="middle" font-size="9.5" font-weight="600" fill="var(--ink)" font-family="IBM Plex Mono,monospace">DAO Class</text>
-              <text x="598" y="20" text-anchor="middle" font-size="9.5" font-weight="600" fill="var(--muted)" font-family="IBM Plex Mono,monospace">DB</text>
-              <line x1="15" y1="26" x2="665" y2="26" stroke="var(--line)" stroke-width="0.5"/>
-
-              <text x="10" y="46" font-size="7.5" fill="var(--muted)" font-family="IBM Plex Mono,monospace">① 메인 흐름</text>
-              <rect x="10" y="50" width="105" height="24" rx="3" fill="var(--accent)" stroke="none"/>
-              <text x="62" y="62" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="white" font-family="IBM Plex Mono,monospace">화면 입력값</text>
-              <line x1="115" y1="62" x2="129" y2="62" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#seq-arr)"/>
-              <rect x="135" y="50" width="110" height="24" rx="3" fill="white" stroke="var(--line)" stroke-width="0.5"/>
-              <text x="190" y="62" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--ink)" font-family="IBM Plex Mono,monospace">요청 전달</text>
-              <line x1="245" y1="62" x2="253" y2="62" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#seq-arr)"/>
-              <rect x="257" y="46" width="127" height="40" rx="3" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="0.8"/>
-              <text x="320" y="60" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--accent)" font-family="IBM Plex Mono,monospace" font-weight="600">SEARCH / UPLOAD</text>
-              <text x="320" y="74" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--accent)" font-family="IBM Plex Mono,monospace" font-weight="600">UPDATE / DELETE</text>
-              <line x1="384" y1="66" x2="392" y2="66" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#seq-arr)"/>
-              <rect x="396" y="50" width="110" height="24" rx="3" fill="white" stroke="var(--line)" stroke-width="0.5"/>
-              <text x="451" y="62" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--ink)" font-family="IBM Plex Mono,monospace">쿼리 실행</text>
-              <line x1="506" y1="62" x2="516" y2="62" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#seq-arr)"/>
-              <rect x="520" y="50" width="148" height="24" rx="3" fill="white" stroke="var(--line)" stroke-width="0.5"/>
-              <text x="594" y="62" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--muted)" font-family="IBM Plex Mono,monospace">제품/STL/썸네일</text>
-
-              <text x="10" y="110" font-size="7.5" fill="var(--muted)" font-family="IBM Plex Mono,monospace">② 에러 처리</text>
-              <rect x="257" y="115" width="127" height="24" rx="3" fill="white" stroke="#C07A3A" stroke-width="0.8" stroke-dasharray="4,2"/>
-              <text x="320" y="127" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="#C07A3A" font-family="IBM Plex Mono,monospace">예외 처리</text>
-              <path d="M 257 127 L 127 127 L 127 142 L 115 142" fill="none" stroke="#C07A3A" stroke-width="1" stroke-dasharray="4,2" marker-end="url(#seq-arr)"/>
-              <rect x="10" y="133" width="105" height="24" rx="3" fill="white" stroke="#C07A3A" stroke-width="0.8"/>
-              <text x="62" y="145" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="#C07A3A" font-family="IBM Plex Mono,monospace">에러 화면 표시</text>
-
-              <text x="10" y="172" font-size="7.5" fill="var(--muted)" font-family="IBM Plex Mono,monospace">③ 반영 API (클라이언트)</text>
-              <rect x="10" y="178" width="105" height="24" rx="3" fill="white" stroke="var(--line)" stroke-width="0.5"/>
-              <text x="62" y="190" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--ink)" font-family="IBM Plex Mono,monospace">클라이언트</text>
-              <line x1="115" y1="190" x2="129" y2="190" stroke="var(--accent-soft)" stroke-width="1.2" marker-end="url(#seq-arr)"/>
-              <rect x="135" y="178" width="110" height="24" rx="3" fill="white" stroke="var(--line)" stroke-width="0.5"/>
-              <text x="190" y="190" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--ink)" font-family="IBM Plex Mono,monospace">UPDATE (API)</text>
-              <line x1="245" y1="190" x2="253" y2="190" stroke="var(--accent-soft)" stroke-width="1.2" marker-end="url(#seq-arr)"/>
-              <rect x="257" y="178" width="127" height="24" rx="3" fill="white" stroke="var(--line)" stroke-width="0.5"/>
-              <text x="320" y="190" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--ink)" font-family="IBM Plex Mono,monospace">UPDATE (API)</text>
-              <line x1="384" y1="190" x2="392" y2="190" stroke="var(--accent-soft)" stroke-width="1.2" marker-end="url(#seq-arr)"/>
-              <rect x="396" y="178" width="110" height="24" rx="3" fill="white" stroke="var(--line)" stroke-width="0.5"/>
-              <text x="451" y="190" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--ink)" font-family="IBM Plex Mono,monospace">UPDATE 실행</text>
-              <line x1="506" y1="190" x2="516" y2="190" stroke="var(--accent-soft)" stroke-width="1.2" marker-end="url(#seq-arr)"/>
-              <line x1="516" y1="196" x2="506" y2="196" stroke="var(--muted)" stroke-width="0.8" stroke-dasharray="3,2" marker-end="url(#seq-arr)"/>
-              <rect x="520" y="178" width="148" height="24" rx="3" fill="white" stroke="var(--line)" stroke-width="0.5"/>
-              <text x="594" y="190" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--muted)" font-family="IBM Plex Mono,monospace">DB 반영</text>
-
-              <path d="M 506 200 L 506 210 L 127 210 L 127 198" fill="none" stroke="var(--muted)" stroke-width="0.8" stroke-dasharray="3,2" marker-end="url(#seq-arr)"/>
-              <text x="300" y="240" text-anchor="middle" font-size="7.5" fill="var(--muted)" font-family="IBM Plex Mono,monospace">← 반영 결과 Json 반환</text>
-            </svg>
-          </div>
-        </div>
-
-        <div class="decision">
-          <div class="decision-title"><span class="dnum">설계 판단 2</span>글로벌 타임존(Timezone) 시차 대응 설계</div>
+          <div class="decision-title">설계 판단 — 글로벌 타임존(Timezone) 시차 대응 설계</div>
           <dl>
             <div class="drow"><dt>문제</dt><dd>일본(GMT+9)과 태국(GMT+7) 사용자가 동일한 제품 정보를 공유하는 상황에서, 서버 시간 기준으로 수정 일자 등을 일괄 표시하여 사용자 간 데이터 시점이 불일치하는 문제 발생.</dd></div>
             <div class="drow"><dt>해결</dt><dd>데이터 참조 방식을 수정하여 각 국가의 시차(Timezone)를 동적으로 반영하도록 백엔드 로직 설계.</dd></div>
@@ -643,14 +579,96 @@
           <h4 class="block-label">추가 담당</h4>
           <ul class="list">
             <li>태국 서비스 전용 제품 정보 화면 레이아웃 구성</li>
-            <li>고객사 대상 데이터 흐름 및 연계 구조 설명 자료 제작·의견 조율</li>
-            <li>기본/상세 설계서 직접 작성 (Java/Struts 서버 로직, SQL 구현) — PL 검토를 거쳐 확정</li>
+            <li>기본/상세 설계서 직접 작성 (Java/Struts 서버 로직, SQL 구현)</li>
             <li>Java 기반 서버 비즈니스 로직 및 SQL 개발 (JSP 화면 연결)</li>
             <li>단위·결합 테스트 설계 및 검증 완료</li>
           </ul>
         </div>
-      </article>
+        <div style="margin-top:20px;padding:18px;border:1px solid var(--line);border-radius:3px;background:var(--paper-2);overflow-x:auto;">
+          <div style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.12em;color:var(--accent);margin-bottom:12px;text-transform:uppercase;">서버 처리 시퀀스 — 담당 개발 영역 (화면~DAO)</div>
+          <svg viewBox="0 0 680 252" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;height:auto;display:block;">
+            <defs>
+              <marker id="seq-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </marker>
+            </defs>
 
+            <!-- Lane backgrounds -->
+            <rect x="2" y="2" width="125" height="220" rx="4" fill="var(--accent-bg)" stroke="var(--line)" stroke-width="0.5"/>
+            <rect x="131" y="2" width="120" height="220" rx="4" fill="white" stroke="var(--line)" stroke-width="0.5"/>
+            <rect x="255" y="2" width="135" height="220" rx="4" fill="white" stroke="var(--line)" stroke-width="0.5"/>
+            <rect x="394" y="2" width="120" height="220" rx="4" fill="white" stroke="var(--line)" stroke-width="0.5"/>
+            <rect x="518" y="2" width="160" height="220" rx="4" fill="var(--paper-2)" stroke="var(--line)" stroke-width="0.5"/>
+
+            <!-- Lane headers -->
+            <text x="64" y="20" text-anchor="middle" font-size="9.5" font-weight="600" fill="var(--accent)" font-family="IBM Plex Mono,monospace">화면</text>
+            <text x="191" y="20" text-anchor="middle" font-size="9.5" font-weight="600" fill="var(--ink)" font-family="IBM Plex Mono,monospace">Action Class</text>
+            <text x="322" y="20" text-anchor="middle" font-size="9.5" font-weight="600" fill="var(--ink)" font-family="IBM Plex Mono,monospace">Function Class</text>
+            <text x="454" y="20" text-anchor="middle" font-size="9.5" font-weight="600" fill="var(--ink)" font-family="IBM Plex Mono,monospace">DAO Class</text>
+            <text x="598" y="20" text-anchor="middle" font-size="9.5" font-weight="600" fill="var(--muted)" font-family="IBM Plex Mono,monospace">DB</text>
+            <line x1="15" y1="26" x2="665" y2="26" stroke="var(--line)" stroke-width="0.5"/>
+
+            <!-- ── FLOW 1: 메인 요청 흐름 ── -->
+            <text x="10" y="46" font-size="7.5" fill="var(--muted)" font-family="IBM Plex Mono,monospace">① 메인 흐름</text>
+            <!-- 화면 → Action -->
+            <rect x="10" y="50" width="105" height="24" rx="3" fill="var(--accent)" stroke="none"/>
+            <text x="62" y="62" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="white" font-family="IBM Plex Mono,monospace">화면 입력값</text>
+            <line x1="115" y1="62" x2="129" y2="62" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#seq-arr)"/>
+            <!-- Action → Function -->
+            <rect x="135" y="50" width="110" height="24" rx="3" fill="white" stroke="var(--line)" stroke-width="0.5"/>
+            <text x="190" y="62" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--ink)" font-family="IBM Plex Mono,monospace">요청 전달</text>
+            <line x1="245" y1="62" x2="253" y2="62" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#seq-arr)"/>
+            <!-- Function CRUD box -->
+            <rect x="257" y="46" width="127" height="40" rx="3" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="0.8"/>
+            <text x="320" y="60" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--accent)" font-family="IBM Plex Mono,monospace" font-weight="600">SEARCH / UPLOAD</text>
+            <text x="320" y="74" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--accent)" font-family="IBM Plex Mono,monospace" font-weight="600">UPDATE / DELETE</text>
+            <line x1="384" y1="66" x2="392" y2="66" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#seq-arr)"/>
+            <!-- DAO -->
+            <rect x="396" y="50" width="110" height="24" rx="3" fill="white" stroke="var(--line)" stroke-width="0.5"/>
+            <text x="451" y="62" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--ink)" font-family="IBM Plex Mono,monospace">쿼리 실행</text>
+            <line x1="506" y1="62" x2="516" y2="62" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#seq-arr)"/>
+            <!-- DB -->
+            <rect x="520" y="50" width="148" height="24" rx="3" fill="white" stroke="var(--line)" stroke-width="0.5"/>
+            <text x="594" y="62" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--muted)" font-family="IBM Plex Mono,monospace">제품/STL/썸네일</text>
+
+            <!-- ── FLOW 2: 에러 처리 흐름 ── -->
+            <text x="10" y="110" font-size="7.5" fill="var(--muted)" font-family="IBM Plex Mono,monospace">② 에러 처리</text>
+            <!-- Function → 에러 화면 (dashed back arrow) -->
+            <rect x="257" y="115" width="127" height="24" rx="3" fill="white" stroke="#C07A3A" stroke-width="0.8" stroke-dasharray="4,2"/>
+            <text x="320" y="127" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="#C07A3A" font-family="IBM Plex Mono,monospace">예외 처리</text>
+            <path d="M 257 127 L 127 127 L 127 142 L 115 142" fill="none" stroke="#C07A3A" stroke-width="1" stroke-dasharray="4,2" marker-end="url(#seq-arr)"/>
+            <rect x="10" y="133" width="105" height="24" rx="3" fill="white" stroke="#C07A3A" stroke-width="0.8"/>
+            <text x="62" y="145" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="#C07A3A" font-family="IBM Plex Mono,monospace">에러 화면 표시</text>
+
+            <!-- ── FLOW 3: 반영 API 흐름 ── -->
+            <text x="10" y="172" font-size="7.5" fill="var(--muted)" font-family="IBM Plex Mono,monospace">③ 반영 API (클라이언트)</text>
+            <!-- 클라이언트 → Action API -->
+            <rect x="10" y="178" width="105" height="24" rx="3" fill="white" stroke="var(--line)" stroke-width="0.5"/>
+            <text x="62" y="190" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--ink)" font-family="IBM Plex Mono,monospace">클라이언트</text>
+            <line x1="115" y1="190" x2="129" y2="190" stroke="var(--accent-soft)" stroke-width="1.2" marker-end="url(#seq-arr)"/>
+            <!-- Action UPDATE(API) -->
+            <rect x="135" y="178" width="110" height="24" rx="3" fill="white" stroke="var(--line)" stroke-width="0.5"/>
+            <text x="190" y="190" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--ink)" font-family="IBM Plex Mono,monospace">UPDATE (API)</text>
+            <line x1="245" y1="190" x2="253" y2="190" stroke="var(--accent-soft)" stroke-width="1.2" marker-end="url(#seq-arr)"/>
+            <!-- Function UPDATE(API) -->
+            <rect x="257" y="178" width="127" height="24" rx="3" fill="white" stroke="var(--line)" stroke-width="0.5"/>
+            <text x="320" y="190" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--ink)" font-family="IBM Plex Mono,monospace">UPDATE (API)</text>
+            <line x1="384" y1="190" x2="392" y2="190" stroke="var(--accent-soft)" stroke-width="1.2" marker-end="url(#seq-arr)"/>
+            <!-- DAO UPDATE -->
+            <rect x="396" y="178" width="110" height="24" rx="3" fill="white" stroke="var(--line)" stroke-width="0.5"/>
+            <text x="451" y="190" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--ink)" font-family="IBM Plex Mono,monospace">UPDATE 실행</text>
+            <line x1="506" y1="190" x2="516" y2="190" stroke="var(--accent-soft)" stroke-width="1.2" marker-end="url(#seq-arr)"/>
+            <!-- DB result back -->
+            <line x1="516" y1="196" x2="506" y2="196" stroke="var(--muted)" stroke-width="0.8" stroke-dasharray="3,2" marker-end="url(#seq-arr)"/>
+            <rect x="520" y="178" width="148" height="24" rx="3" fill="white" stroke="var(--line)" stroke-width="0.5"/>
+            <text x="594" y="190" text-anchor="middle" dominant-baseline="central" font-size="8.5" fill="var(--muted)" font-family="IBM Plex Mono,monospace">DB 반영</text>
+
+            <!-- 결과 반환 (dashed back) -->
+            <path d="M 506 200 L 506 210 L 127 210 L 127 198" fill="none" stroke="var(--muted)" stroke-width="0.8" stroke-dasharray="3,2" marker-end="url(#seq-arr)"/>
+            <text x="300" y="240" text-anchor="middle" font-size="7.5" fill="var(--muted)" font-family="IBM Plex Mono,monospace">← 반영 결과 Json 반환</text>
+          </svg>
+        </div>
+      </article>
       <!-- 운영 업무 -->
       <article class="project reveal">
         <div class="project-kicker">운영 업무 (상시)</div>
@@ -680,10 +698,9 @@
         <span class="sec-name">PMO 경력</span>
       </div>
 
-      <div class="block reveal" style="margin-top:0;">
-        <h4 class="block-label">(주)제타럭스시스템 — 백엔드 출신 PMO</h4>
-        <p style="font-family:var(--font-mono);font-size:0.78rem;color:var(--muted);margin-bottom:14px;">2025.08 – 재직중</p>
-        <p>공공 플랫폼 구축 사업 2건의 PMO로서 요구사항 정의부터 화면 설계, 일정 관리, 설계 산출물(아키텍처·DB·클래스 설계서 등) 검토, QA까지 프로젝트 전반의 PMO 업무를 수행했습니다. 백엔드 개발 경험을 바탕으로 설계 산출물과 API/DB 구조를 검토하며 개발팀과 기술 커뮤니케이션을 수행했고, Apache JMeter를 활용한 Java 서버 성능 테스트를 직접 수행했습니다.</p>
+      <div class="pmo-lead reveal">
+        <p>(주)제타럭스시스템 — PMO (프로젝트 관리 및 아키텍처 설계) · 2025.08 ~ 2026.06</p>
+        <p style="margin-top:12px;">공공 플랫폼 구축 사업 2건의 PMO로서, 요구사항 분석부터 데이터 흐름 설계, 인프라 아키텍처 수립, QA 전 주기를 구조화하고 관리했습니다.</p>
       </div>
 
       <div class="pmo-project reveal">
@@ -691,43 +708,38 @@
         <div class="project-title">신재생 에너지·발전소 데이터 개방 사업</div>
         <div class="project-kicker" style="margin-top:8px;">공공 데이터 플랫폼 구축 · 2025.08 ~ 2025.12</div>
         <div class="block" style="margin-top:18px;">
-          <h4 class="block-label">담당 업무</h4>
+          <h4 class="block-label">담당 업무 및 성과</h4>
           <ul class="list">
-            <li><strong>요구사항 분석 및 정의서 작성</strong> — 고객사 요구사항을 수집·정리하여 요구사항 정의서로 문서화</li>
-            <li><strong>화면 설계</strong> — 비즈니스 요구사항을 반영한 시스템 화면 설계</li>
-            <li><strong>ETL 파이프라인 구조 설계 자료 작성 및 고객사 소통</strong> — 원천 DB 수집부터 전처리, 개방 DB 적재까지의 ETL 흐름을 도식화한 설명 자료를 제작하여 고객사 합의 기반 마련</li>
-            <li><strong>개발 일정 관리</strong> — 마일스톤 기반 일정 수립 및 진척 관리</li>
-            <li><strong>설계·보안 감리 대응</strong> — 감리 지적 사항에 대한 기술적 대응 및 개발팀과의 조율</li>
-            <li><strong>QA 수행</strong> — 단위·통합·인수 테스트 시나리오 설계 및 실시</li>
-            <li><strong>성능 테스트</strong> — Apache JMeter를 이용한 Java 서버 성능 테스트 수행</li>
+            <li><strong>ETL 파이프라인 데이터 흐름 설계</strong> — 원천 DB 수집부터 전처리, 개방 DB 적재까지의 전체 ETL 데이터 흐름을 도식화하고 파이프라인 명세서 수립</li>
+            <li><strong>인프라 아키텍처 구성</strong> — 네트워크 및 하드웨어 아키텍처 구성도를 설계, 산출물 작성</li>
+            <li><strong>QA 프로세스 설계 및 리드</strong> — 단위·통합·인수 테스트를 포함한 QA 전 주기를 설계하고 실행하여 시스템 안정성 검증</li>
+            <li><strong>감리 및 일정 관리</strong> — 설계·보안 감리 지적 사항에 대한 기술적 대응 및 개발 일정 관리</li>
           </ul>
         </div>
       </div>
 
       <div class="pmo-project reveal">
         <div class="project-kicker">Project 04</div>
-        <div class="project-title">경상북도 인구산업 통합 플랫폼[3단계] GBinPLUS+ 구축 사업</div>
+        <div class="project-title">경상북도 GBinPLUS+ 인구통계 플랫폼 3차 구축 사업</div>
         <div class="project-kicker" style="margin-top:8px;">공공 인구통계 플랫폼 구축 · 2025.09 ~ 2026.05</div>
         <div class="block" style="margin-top:18px;">
-          <h4 class="block-label">담당 업무</h4>
+          <h4 class="block-label">담당 업무 및 성과</h4>
           <ul class="list">
-            <li><strong>요구사항 분석 및 정의서 작성</strong> — 고객사 요구사항을 수집·정리하여 요구사항 정의서로 문서화</li>
-            <li><strong>화면 설계</strong> — 비즈니스 요구사항을 반영한 시스템 화면 설계</li>
-            <li><strong>망 연계 아키텍처 설계 및 고객사 소통</strong> — 개발환경 → 운영환경 → 웹서버 → PPP → 행정안전부 행정망 → 경상북도청으로 이어지는 다단계 연계 경로를 구간별로 정의하고, 망 연계 신청 절차 진행 및 고객사 조율</li>
-            <li><strong>개발 일정 관리</strong> — 마일스톤 기반 일정 수립 및 진척 관리</li>
-            <li><strong>QA 수행</strong> — 단위·통합·인수 테스트 시나리오 설계 및 실시</li>
-            <li><strong>성능 테스트</strong> — Apache JMeter를 이용한 Java 서버 성능 테스트 수행</li>
+            <li><strong>외부 시스템 연동 아키텍처 설계</strong> — 행정안전부 공통기반 AI 인프라와의 연계 구성을 설계하여 외부 시스템 연동 설계</li>
+            <li><strong>인프라 산출물 및 화면 설계</strong> — 인프라 아키텍처 산출물 작성 및 비즈니스 요구사항을 반영한 시스템 화면 설계</li>
+            <li><strong>QA 전 주기 총괄</strong> — 개발팀 산출물 검토 및 단위·통합·인수 테스트 시나리오 수립 및 검증</li>
+            <li><strong>고객사 소통 및 조율</strong> — 공공 영역의 기술 요건을 파악하여 개발팀과 고객사 간 스펙 조율 및 일정 관리</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- 04 프로젝트 -->
-    <section class="section" id="project">
+    <!-- 04 해커톤 -->
+    <section class="section" id="hackathon">
       <div class="sec-marker reveal">
         <span class="sec-num">04</span>
         <span class="sec-line"></span>
-        <span class="sec-name">프로젝트</span>
+        <span class="sec-name">해커톤 프로젝트</span>
       </div>
 
       <article class="project reveal" style="margin-top:0;">
@@ -737,9 +749,10 @@
         <table class="meta">
           <tr><th>기간</th><td>2026.05</td></tr>
           <tr><th>대회</th><td>2026 스마트 공장 운영 시스템 MVP 개발 해커톤 (차세대융합기술연구원 메이커스페이스 × DACON) <br>— 163팀 중 본선 진출</td></tr>
-          <tr><th>인원</th><td>2명 (팀 타르트포인트) — 담당: 백엔드·AI/ML·DB</td></tr>
+          <tr><th>인원</th><td>2명 (팀 타르트포인트) <br>— 담당: 백엔드·AI/ML·DB</td></tr>
           <tr><th>주요 기술</th><td>백엔드: Python, FastAPI, Pydantic, XGBoost, OR-Tools, SQLite<br>프론트엔드: React 18, Vite, TypeScript</td></tr>
-          <tr><th>GitHub</th><td><a href="https://github.com/Ease113/Feel-the-vibe" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:0.82rem;color:var(--accent);text-decoration:none;">github.com/Ease113/Feel-the-vibe ↗</a></td></tr>
+          <tr><th>개발 환경</th><td>AI-assisted workflow(Claude Code / Codex)를 활용해 설계 문서 기반 구현·검증 프로세스로 MVP 개발 진행</td></tr>
+          <tr><th>GitHub</th><td><a href="https://github.com/Ease113/Feel-the-vibe" target="_blank" style="font-family:var(--font-mono);font-size:0.82rem;color:var(--accent);text-decoration:none;">github.com/Ease113/Feel-the-vibe ↗</a></td></tr>
         </table>
 
         <div class="block">
@@ -822,7 +835,7 @@
           <dl>
             <div class="drow"><dt>문제</dt><dd>해커톤 및 데모 환경에서 API 키 누락, ML 모델 미학습, 최적화 라이브러리 에러 발생 시 전체 파이프라인이 멈출 위험 상존.</dd></div>
             <div class="drow"><dt>해결</dt><dd>AI 구성요소 실패 시 XGBoost → 결정론적 휴리스틱, OR-Tools → 휴리스틱 탐색, LLM → 템플릿 기반 텍스트로 단계별 다운그레이드되도록 Fallback 로직 구현.</dd></div>
-            <div class="drow effect"><dt>성과</dt><dd>일부 AI 구성요소 실패 상황에서도 전체 기능이 동작할 수 있도록 안정성을 확보.</dd></div>
+            <div class="drow effect"><dt>성과</dt><dd>핵심 의사결정 파이프라인의 결함 허용(Fault Tolerance)을 확보하여 안정적인 데모 보장.</dd></div>
           </dl>
         </div>
 
@@ -833,11 +846,6 @@
             <div class="drow"><dt>해결</dt><dd>데이터 모델 설계 시 생산 순서의 기준 식별 키를 <code>sku_id</code>가 아닌 고유한 <code>plan_item_id</code>로 정의.</dd></div>
             <div class="drow effect"><dt>성과</dt><dd>데이터 모델 수준에서 중복 SKU 배치 문제를 근본적으로 해소하고 순서 식별 모호성 제거.</dd></div>
           </dl>
-        </div>
-
-        <div class="ai-workflow">
-          <div class="ai-workflow-label">개발 환경 — AI-assisted Workflow 적용</div>
-          <p>본 프로젝트는 자체 정립한 AI 협업 워크플로우(Claude Code / Codex)를 적용해, 모든 기능을 설계 문서 선행 → 구현 → 교차 검증의 순서로 진행했습니다. 핵심 규칙은 두 가지: (1) <code>CLAUDE.md</code>로 "가정 명시·범위 통제·Surgical Changes" 등 자연어 규칙을 명문화, (2) <code>design-doc.md</code> 템플릿(Context / Goals &amp; Non-Goals / Architecture / Sequence / Decisions / Edge Cases)으로 구현 전 게이트웨이 운영. 프로젝트의 모든 설계 문서는 <code>docs/design/</code>에 정리되어 있습니다.</p>
         </div>
 
         <div class="block">
@@ -851,10 +859,131 @@
       </article>
     </section>
 
+    <!-- 05 AI-assisted Engineering -->
+    <section class="section" id="ai">
+      <div class="sec-marker reveal">
+        <span class="sec-num">05</span>
+        <span class="sec-line"></span>
+        <span class="sec-name">AI-assisted Engineering</span>
+      </div>
+
+      <div class="block reveal" style="margin-top:0;">
+        <p>팀 내 유일한 개발 역량 보유 PMO로서, 산출물 프로세스의 자동화를 통한 업무 효율화를 선제적으로 추진했습니다. 이 과정에서 AI 기반 개발 자동화의 한계를 직접 경험하고, 오버 엔지니어링과 범위 이탈(Scope Creep)을 통제하는 설계-검증 워크플로우를 정립하게 되었습니다.</p>
+      </div>
+
+      <div class="subpart reveal">
+        <div class="subpart-label"><span class="sp-n">A</span>자동화 시도와 한계 발견 — 3단계 진화</div>
+
+        <p><strong>1단계 — GeminiFactory (Gemini + MCP + CLI)</strong><br>
+          PMO 산출물(요구사항 정의서, 시스템 설계서 등) 자동화를 위해 Gemini를 기반으로 MCP·Skill을 구성하고, 템플릿·아웃풋·컨텍스트 구조를 정의한 CLI 환경을 직접 구축했습니다. Gemini의 성능 한계를 확인한 후 동일한 구조를 Claude로 이식해 산출물 자동화 일부 구현에 성공했고, 이를 플랫폼으로 발전시키는 방향을 시도했습니다.</p>
+
+        <p style="margin-top:16px;"><strong>2단계 — PMO-Assistant (Codex 기반 오케스트레이터)</strong><br>
+          기존 design → dev → review → PR 하네스 위에 오케스트레이터를 구현해, CMD 백그라운드에서 24/7 자율 실행되는 개발 자동화 플랫폼을 구축했습니다. Reviewer 단계에서 Claude와 Codex의 교차 검증을 적용했고, 최종 검토만 사람이 수행하는 구조로 설계했습니다.</p>
+
+        <div style="margin:24px 0;padding:20px;border:1px solid var(--line);border-radius:3px;background:var(--paper-2);overflow-x:auto;">
+          <div style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.12em;color:var(--accent);margin-bottom:14px;text-transform:uppercase;">Agent Orchestration 구조 — Codex 기반 / PMO-Assistant</div>
+          <svg viewBox="0 0 720 290" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+            <defs>
+              <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto">
+                <polygon points="0 0, 8 3.5, 0 7" fill="#1F4D3E"/>
+              </marker>
+              <marker id="arr-sm" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                <polygon points="0 0, 6 3, 0 6" fill="#C0BAA8"/>
+              </marker>
+            </defs>
+            <!-- Task Input -->
+            <rect x="10" y="120" width="82" height="40" rx="3" fill="#E6EBE3" stroke="#1F4D3E" stroke-width="1.5"/>
+            <text x="51" y="136" text-anchor="middle" font-size="10" fill="#1F1E1A" font-family="IBM Plex Mono, monospace">Task</text>
+            <text x="51" y="151" text-anchor="middle" font-size="10" fill="#1F1E1A" font-family="IBM Plex Mono, monospace">Input</text>
+            <!-- Arrow Task → Orch -->
+            <line x1="92" y1="140" x2="130" y2="140" stroke="#1F4D3E" stroke-width="1.5" marker-end="url(#arr)"/>
+            <!-- Orchestrator -->
+            <rect x="133" y="98" width="122" height="84" rx="3" fill="#1F4D3E"/>
+            <text x="194" y="126" text-anchor="middle" font-size="11" fill="white" font-family="IBM Plex Mono, monospace" font-weight="600">Orchestrator</text>
+            <text x="194" y="143" text-anchor="middle" font-size="8" fill="#A8C4B8" font-family="IBM Plex Mono, monospace">role chain 결정</text>
+            <text x="194" y="157" text-anchor="middle" font-size="8" fill="#A8C4B8" font-family="IBM Plex Mono, monospace">task state 추적</text>
+            <text x="194" y="171" text-anchor="middle" font-size="8" fill="#A8C4B8" font-family="IBM Plex Mono, monospace">결과 요약 → 인간</text>
+            <!-- Arrow Orch → Roles -->
+            <line x1="255" y1="140" x2="292" y2="140" stroke="#1F4D3E" stroke-width="1.5" marker-end="url(#arr)"/>
+            <!-- Role Chain Group -->
+            <rect x="295" y="20" width="170" height="252" rx="3" fill="rgba(244,242,235,0.6)" stroke="#D9D4C5" stroke-width="1.5" stroke-dasharray="6,3"/>
+            <text x="380" y="37" text-anchor="middle" font-size="7.5" fill="#827E72" font-family="IBM Plex Mono, monospace" letter-spacing="1.5">ROLE CHAIN LOOP</text>
+            <!-- Designer -->
+            <rect x="310" y="46" width="140" height="32" rx="2" fill="white" stroke="#D9D4C5" stroke-width="1"/>
+            <text x="380" y="66" text-anchor="middle" font-size="9.5" fill="#1F1E1A" font-family="IBM Plex Mono, monospace">① Designer</text>
+            <line x1="380" y1="78" x2="380" y2="89" stroke="#C0BAA8" stroke-width="1" marker-end="url(#arr-sm)"/>
+            <!-- Backend-Dev -->
+            <rect x="310" y="91" width="140" height="32" rx="2" fill="white" stroke="#D9D4C5" stroke-width="1"/>
+            <text x="380" y="111" text-anchor="middle" font-size="9.5" fill="#1F1E1A" font-family="IBM Plex Mono, monospace">② Backend-Dev</text>
+            <line x1="380" y1="123" x2="380" y2="134" stroke="#C0BAA8" stroke-width="1" marker-end="url(#arr-sm)"/>
+            <!-- Reviewer -->
+            <rect x="310" y="136" width="140" height="48" rx="2" fill="#E6EBE3" stroke="#1F4D3E" stroke-width="1.5"/>
+            <text x="380" y="157" text-anchor="middle" font-size="9.5" fill="#1F4D3E" font-family="IBM Plex Mono, monospace" font-weight="600">③ Reviewer</text>
+            <text x="380" y="173" text-anchor="middle" font-size="7.5" fill="#3C6B58" font-family="IBM Plex Mono, monospace">Claude ⇄ Codex 교차검증</text>
+            <line x1="380" y1="184" x2="380" y2="195" stroke="#C0BAA8" stroke-width="1" marker-end="url(#arr-sm)"/>
+            <!-- Doc-sync -->
+            <rect x="310" y="197" width="140" height="32" rx="2" fill="white" stroke="#D9D4C5" stroke-width="1"/>
+            <text x="380" y="217" text-anchor="middle" font-size="9.5" fill="#1F1E1A" font-family="IBM Plex Mono, monospace">④ Doc-sync</text>
+            <!-- Loop indicator -->
+            <text x="304" y="148" text-anchor="middle" font-size="13" fill="#D9D4C5">↻</text>
+            <!-- Arrow Roles → Gate -->
+            <line x1="465" y1="140" x2="502" y2="140" stroke="#1F4D3E" stroke-width="1.5" marker-end="url(#arr)"/>
+            <!-- Human Gate -->
+            <rect x="505" y="98" width="118" height="84" rx="3" fill="#EDEAE0" stroke="#1F4D3E" stroke-width="2"/>
+            <text x="564" y="128" text-anchor="middle" font-size="9.5" fill="#1F4D3E" font-family="IBM Plex Mono, monospace" font-weight="600">Human</text>
+            <text x="564" y="143" text-anchor="middle" font-size="9.5" fill="#1F4D3E" font-family="IBM Plex Mono, monospace" font-weight="600">Approval Gate</text>
+            <text x="564" y="162" text-anchor="middle" font-size="7.5" fill="#827E72" font-family="IBM Plex Mono, monospace">commit / merge 직전</text>
+            <text x="564" y="174" text-anchor="middle" font-size="7.5" fill="#827E72" font-family="IBM Plex Mono, monospace">필수 인간 검토·승인</text>
+            <!-- Arrow Gate → Commit -->
+            <line x1="623" y1="140" x2="658" y2="140" stroke="#1F4D3E" stroke-width="1.5" marker-end="url(#arr)"/>
+            <!-- Commit/PR -->
+            <rect x="661" y="110" width="56" height="60" rx="3" fill="#1F4D3E"/>
+            <text x="689" y="131" text-anchor="middle" font-size="9" fill="white" font-family="IBM Plex Mono, monospace" font-weight="600">Commit</text>
+            <text x="689" y="147" text-anchor="middle" font-size="9" fill="#A8C4B8" font-family="IBM Plex Mono, monospace">→ Push</text>
+            <text x="689" y="162" text-anchor="middle" font-size="9" fill="#A8C4B8" font-family="IBM Plex Mono, monospace">→ PR</text>
+            <!-- Bottom note -->
+            <text x="360" y="283" text-anchor="middle" font-size="7.5" fill="#827E72" font-family="IBM Plex Mono, monospace">* Provider-agnostic — AI 실행 명령어를 설정값으로 분리 (Codex / Claude 교체 가능)</text>
+          </svg>
+        </div>
+
+        <p style="margin-top:16px;"><strong>한계와 중단</strong><br>
+          플랫폼을 운영하면서 구현이 진행될수록 시스템이 초기 설계 범위를 스스로 확장해 가는 문제를 발견했습니다. <br>매 단계의 확장이 국소적으로는 합리적으로 보여 멈추기 어렵고, 누적되면 최종 결과물이 처음 의도한 설계에서 벗어났습니다.
+          <br>핵심 문제가 "AI가 코드를 생성할 수 있는가"가 아니라 "구현이 초기 의도 안에 머무를 수 있는가"임을 확인하고 자율 구현을 중단했습니다.
+          <br>현재 하네스 구조를 단순화하는 방향으로 새로운 설계를 진행 중입니다.</p>
+      </div>
+
+      <div class="subpart reveal">
+        <div class="subpart-label"><span class="sp-n">B</span>재정립된 개발 규칙 및 템플릿</div>
+        <p>복잡한 오케스트레이터 대신, 명시적인 규칙과 설계 문서를 통해 구현 범위를 제어하는 방향으로 전환했습니다. <br> 코드 컨벤션처럼 결정론적으로 검증 가능한 항목은 린터에 위임하고, 자연어 규칙은 도구가 잡을 수 없는 영역(가정 명시·범위 통제·설계 판단)에만 집중했습니다.</p>
+
+        <div class="block">
+          <h4 class="block-label"><code>CLAUDE.md</code> — AI 협업 규칙</h4>
+          <table>
+            <tr><th>Think Before Coding</th><td>가정 명시, 모호 시 중단 후 질문</td></tr>
+            <tr><th>Simplicity First</th><td>추측성 추상화 금지 — 요청 범위 내 최소 코드만 구현</td></tr>
+            <tr><th>Surgical Changes</th><td>변경 범위 한정 — 변경 대상만 수정, 주변 코드 임의 수정 금지</td></tr>
+            <tr><th>Goal-Driven Execution</th><td>검증 가능한 완료 기준 정의 후 실행</td></tr>
+            <tr><th>Code Quality</th><td>린터를 통한 자동화 스타일 검증, 코드 내 '이유(Why)' 주석 명시 의무화</td></tr>
+          </table>
+        </div>
+
+        <div class="block">
+          <h4 class="block-label"><code>design-doc.md</code> — 설계 문서 템플릿</h4>
+          <p>Context / Goals &amp; Non-Goals / Architecture / Sequence / Decisions(결정·대안·근거·영향) / Edge Cases <br>6개 필수 섹션 구조화. 미해결 질문(Open Questions)이 전체 결정의 과반을 넘을 경우 구현 단계 진입을 차단하는 게이트웨이 역할 수행.</p>
+        </div>
+      </div>
+
+      <div class="closing reveal">
+        SmartFactoryV2 해커톤 프로젝트는 이 워크플로우를 적용하여 개발을 진행했습니다.
+        <br> 프로젝트의 모든 설계 문서(<code>docs/design/</code>)는 해당 워크플로우를 적용하여 작성되었습니다.
+      </div>
+    </section>
+
   </main>
 </div>
 
 <script>
+  // scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const revObserver = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
@@ -863,6 +992,7 @@
   },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
   reveals.forEach(el=>revObserver.observe(el));
 
+  // scroll-spy nav
   const navLinks = document.querySelectorAll('nav a');
   const sections = [...navLinks].map(a=>document.querySelector(a.getAttribute('href')));
   const spyObserver = new IntersectionObserver((entries)=>{
